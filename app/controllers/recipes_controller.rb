@@ -17,7 +17,7 @@ class RecipesController < ApplicationController
   end
 
   def edit
-    @recipe = Recipe.new
+    @recipe = Recipe.find_by(params[:id])
   end
 
   private
