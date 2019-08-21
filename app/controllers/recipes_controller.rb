@@ -16,6 +16,9 @@ class RecipesController < ApplicationController
     redirect_to @recipe
   end
 
+  def edit
+  end
+
   private
 
   def recipe_params
