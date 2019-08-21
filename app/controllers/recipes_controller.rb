@@ -17,6 +17,7 @@ class RecipesController < ApplicationController
   end
 
   def edit
+    @recipe = Recipe.new
   end
 
   private
