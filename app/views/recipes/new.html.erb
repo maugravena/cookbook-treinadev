@@ -9,7 +9,6 @@
   <%= f.text_field :title %>
   <%= f.label :recipe_type_id, 'Tipo da Receita' %>
   <%= f.collection_select(:recipe_type_id, @recipe_types, :id, :name) %>
-  <%= f.text_field :recipe_type %>
   <%= f.label :cuisine, 'Cozinha' %>
   <%= f.text_field :cuisine %>
   <%= f.label :difficulty, 'Dificuldade' %>
