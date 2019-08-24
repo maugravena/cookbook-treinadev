@@ -1,5 +1,9 @@
 <h1>Editar Receita</h1>
 
+<% flash.each do |msg| -%>
+  <%= msg %>
+<% end %>
+
 <%= form_for @recipe do |f| %>
   <%= f.label :title, 'Título' %>
   <%= f.text_field :title %>

@@ -22,8 +22,14 @@ class RecipesController < ApplicationController
 
   def update
     @recipe = Recipe.find_by(params[:id])
-    @recipe.update!(recipe_params)
-    redirect_to @recipe
+    @recipe.update(recipe_params)
+
+    if @recipe.valid?
+      redirect_to @recipe
+    else
+      flash[:error] = 'Você deve informar todos os dados da receita'
+      redirect_to :edit_recipe
+    end
   end
 
   private
