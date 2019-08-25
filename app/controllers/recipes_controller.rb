@@ -10,6 +10,7 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
     @recipe_types = RecipeType.all
+    @cuisines = Cuisine.all
   end
 
   def create
@@ -26,6 +27,7 @@ class RecipesController < ApplicationController
   def edit
     @recipe = Recipe.find_by(params[:id])
     @recipe_types = RecipeType.all
+    @cuisines = Cuisine.all
   end
 
   def update
@@ -47,7 +49,7 @@ class RecipesController < ApplicationController
       .require(:recipe)
       .permit(:title,
               :recipe_type_id,
-              :cuisine,
+              :cuisine_id,
               :difficulty,
               :cook_time,
               :ingredients,
