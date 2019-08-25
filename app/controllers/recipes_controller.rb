@@ -1,6 +1,14 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    @recipes = if params[:q]
+      Recipe.where('title LIKE ?', "#{params[:q]}%")
+    else
+      Recipe.all
+    end
+
+    if @recipes.empty?
+      flash[:error] = 'Não foi possível encontrar a receita'
+    end
   end
 
   def show
@@ -42,6 +50,10 @@ class RecipesController < ApplicationController
     end
   end
 
+  #def search
+  #  @recipes = Recipe.where(title: params[:q])
+  #end
+
   private
 
   def recipe_params
@@ -53,6 +65,7 @@ class RecipesController < ApplicationController
               :difficulty,
               :cook_time,
               :ingredients,
-              :cook_method)
+              :cook_method,
+              :q)
   end
 end

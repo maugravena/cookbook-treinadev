@@ -3,6 +3,16 @@
 <%= link_to 'Enviar uma receita', new_recipe_path %>
 <%= link_to 'Cadastrar tipo de receita', new_recipe_type_path %>
 
+<%= form_tag(recipes_path, method: :get) do %>
+  <%= label_tag :q, 'Pesquisar receita:' %>
+  <%= text_field_tag :q, params[:term] %>
+  <%= submit_tag 'Pesquisar', name: nil %>
+<% end %>
+
+<% flash.each do |msg| %>
+  <%= msg %>
+<% end %>
+
 <% @recipes.each do |recipe| %>
   <h1><%= link_to recipe.title, recipe %></h1>
   <ul>
