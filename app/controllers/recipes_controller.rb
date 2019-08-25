@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!, only: %i[new create]
+
   def index
     @recipes = if params[:q]
       Recipe.where('title LIKE ?', "#{params[:q]}%")
