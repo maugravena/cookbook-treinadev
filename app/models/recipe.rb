@@ -3,6 +3,8 @@ class Recipe < ApplicationRecord
   belongs_to :cuisine
   belongs_to :user
 
+  has_one_attached :recipe_photo
+
   validates :title,
             :recipe_type,
             :cuisine,

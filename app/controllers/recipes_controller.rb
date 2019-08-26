@@ -71,6 +71,7 @@ class RecipesController < ApplicationController
               :cook_time,
               :ingredients,
               :cook_method,
+              :recipe_photo,
               :q)
   end
 end
