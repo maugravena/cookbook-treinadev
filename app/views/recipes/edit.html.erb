@@ -19,5 +19,7 @@
   <%= f.text_field :ingredients %>
   <%= f.label :cook_method, 'Como Preparar' %>
   <%= f.text_field :cook_method %>
-  <%= f.submit 'Enviar' %>
+  <% if user_signed_in? %>
+    <%= f.submit 'Enviar' %>
+  <% end %>
 <% end %>

@@ -19,4 +19,6 @@
 <p><%= @recipe.cook_method %></p>
 
 <%= link_to 'Voltar', root_path %>
-<%= link_to 'Editar', edit_recipe_path %>
+<% if user_signed_in? && current_user == @recipe.user %>
+  <%= link_to 'Editar', edit_recipe_path %>
+<% end %>

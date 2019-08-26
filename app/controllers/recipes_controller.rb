@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!, only: %i[new create]
+  before_action :authenticate_user!, only: %i[new create edit update]
 
   def index
     @recipes = if params[:q]
@@ -58,7 +58,7 @@ class RecipesController < ApplicationController
   def user_recipes
     @recipes = Recipe.where(user: current_user)
   end
-  
+
   private
 
   def recipe_params
