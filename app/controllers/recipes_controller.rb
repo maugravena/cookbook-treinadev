@@ -24,11 +24,14 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.create(recipe_params)
+    @recipe = Recipe.new(recipe_params)
+    @recipe.user = current_user
 
-    if @recipe.valid?
+    if @recipe.save
       redirect_to @recipe
     else
+      @recipe_types = RecipeType.all
+      @cuisines = Cuisine.all
       flash[:error] = 'Não foi possível salvar a receita'
       redirect_to :new_recipe
     end
