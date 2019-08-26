@@ -6,7 +6,8 @@ feature 'User search recipe' do
     RecipeType.create(name: 'Entrada')
     cuisine = Cuisine.create(name: 'Brasileira')
     Cuisine.create(name: 'Arabe')
-    Recipe.create(title: 'Bolo de cenoura', difficulty: 'Médio',
+    user = User.create(email: 'user@email.com', password: '123456')
+    Recipe.create(user: user, title: 'Bolo de cenoura', difficulty: 'Médio',
                   recipe_type: recipe_type, cuisine: cuisine,
                   cook_time: 50, ingredients: 'Farinha, açucar, cenoura',
                   cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes')
@@ -23,7 +24,8 @@ feature 'User search recipe' do
     RecipeType.create(name: 'Entrada')
     cuisine = Cuisine.create(name: 'Brasileira')
     Cuisine.create(name: 'Arabe')
-    Recipe.create(title: 'Torta de maça', difficulty: 'Médio',
+    user = User.create(email: 'user@email.com', password: '123456')
+    Recipe.create(user: user, title: 'Torta de maça', difficulty: 'Médio',
                   recipe_type: recipe_type, cuisine: cuisine,
                   cook_time: 50, ingredients: 'Farinha, açucar, cenoura',
                   cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes')
@@ -40,7 +42,8 @@ feature 'User search recipe' do
     RecipeType.create(name: 'Entrada')
     cuisine = Cuisine.create(name: 'Brasileira')
     Cuisine.create(name: 'Arabe')
-    recipe = Recipe.create(title: 'Torta de maça', difficulty: 'Médio',
+    user = User.create(email: 'user@email.com', password: '123456')
+    recipe = Recipe.create(user: user, title: 'Torta de maça', difficulty: 'Médio',
                   recipe_type: recipe_type, cuisine: cuisine,
                   cook_time: 50, ingredients: 'Farinha, açucar, cenoura',
                   cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes')
@@ -49,7 +52,8 @@ feature 'User search recipe' do
     RecipeType.create(name: 'Entrada')
     cuisine = Cuisine.create(name: 'Brasileira')
     Cuisine.create(name: 'Arabe')
-    other_recipe = Recipe.create(title: 'Torta de morango', difficulty: 'Médio',
+    other_user = User.create(email: 'other_user@email.com', password: '123456')
+    other_recipe = Recipe.create(user: other_user, title: 'Torta de morango', difficulty: 'Médio',
                   recipe_type: recipe_type, cuisine: cuisine,
                   cook_time: 50, ingredients: 'Farinha, açucar, cenoura',
                   cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes')
