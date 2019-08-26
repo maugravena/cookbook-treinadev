@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   end
 
   resources :recipe_types, only: %i[show new create]
-
+  
+  get '/user_recipes', to: 'recipes#user_recipes'
 end

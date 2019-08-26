@@ -4,6 +4,7 @@
 
 <% if user_signed_in? %>
   <%= link_to 'Enviar uma receita', new_recipe_path %>
+  <%= link_to 'Ver minhas receitas', user_recipes_path %>
   <%= link_to 'Sair', destroy_user_session_path, method: :delete %>
 <% else %>
   <%= link_to 'Entrar', user_session_path %>

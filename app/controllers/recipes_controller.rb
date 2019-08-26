@@ -55,10 +55,10 @@ class RecipesController < ApplicationController
     end
   end
 
-  #def search
-  #  @recipes = Recipe.where(title: params[:q])
-  #end
-
+  def user_recipes
+    @recipes = Recipe.where(user: current_user)
+  end
+  
   private
 
   def recipe_params
